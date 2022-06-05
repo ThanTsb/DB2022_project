@@ -1,0 +1,16 @@
+use elidek;
+insert into scientific_fields (field_name) values ('Conductors');
+insert into scientific_fields (field_name) values ('Quantum Mechanics');
+insert into scientific_fields (field_name) values ('Consumer Non-Durables');
+insert into scientific_fields (field_name) values ('Biotechnology');
+insert into scientific_fields (field_name) values ('Cryptography');
+insert into scientific_fields (field_name) values ('Augmented Reality');
+insert into scientific_fields (field_name) values ('Virtual Reality');
+insert into scientific_fields (field_name) values ('Pharmaceuticals');
+insert into scientific_fields (field_name) values ('Health Care');
+insert into scientific_fields (field_name) values ('Consumer Services');
+insert into scientific_fields (field_name) values ('Renewable Energy');
+insert into scientific_fields (field_name) values ('Artificial Intelligence');
+insert into scientific_fields (field_name) values ('Public Utilities');
+insert into scientific_fields (field_name) values ('Capital Goods');
+insert into scientific_fields (field_name) values ('Consumer Durables');

@@ -1,0 +1,143 @@
+use elidek;
+insert into project_fields (field_name, p_id) values ('Conductors', 1);
+insert into project_fields (field_name, p_id) values ('Quantum Mechanics', 1);
+insert into project_fields (field_name, p_id) values ('Consumer Non-Durables', 2);
+insert into project_fields (field_name, p_id) values ('Biotechnology', 2);
+insert into project_fields (field_name, p_id) values ('Cryptography', 3);
+insert into project_fields (field_name, p_id) values ('Augmented Reality', 3);
+insert into project_fields (field_name, p_id) values ('Virtual Reality', 4);
+insert into project_fields (field_name, p_id) values ('Pharmaceuticals',4);
+insert into project_fields (field_name, p_id) values ('Health Care',5);
+insert into project_fields (field_name, p_id) values ('Consumer Services',5);
+insert into project_fields (field_name, p_id) values ('Renewable Energy',6);
+insert into project_fields (field_name, p_id) values ('Artificial Intelligence',6);
+insert into project_fields (field_name, p_id) values ('Public Utilities',7);
+insert into project_fields (field_name, p_id) values ('Capital Goods',7);
+insert into project_fields (field_name, p_id) values ('Consumer Durables',8);
+insert into project_fields (field_name, p_id) values ('Conductors', 8);
+insert into project_fields (field_name, p_id) values ('Quantum Mechanics', 9);
+insert into project_fields (field_name, p_id) values ('Consumer Non-Durables', 9);
+insert into project_fields (field_name, p_id) values ('Biotechnology', 10);
+insert into project_fields (field_name, p_id) values ('Cryptography', 10);
+insert into project_fields (field_name, p_id) values ('Augmented Reality', 11);
+insert into project_fields (field_name, p_id) values ('Virtual Reality', 11);
+insert into project_fields (field_name, p_id) values ('Pharmaceuticals', 11);
+insert into project_fields (field_name, p_id) values ('Health Care', 12);
+insert into project_fields (field_name, p_id) values ('Consumer Services', 12);
+insert into project_fields (field_name, p_id) values ('Renewable Energy', 13);
+insert into project_fields (field_name, p_id) values ('Artificial Intelligence', 13);
+insert into project_fields (field_name, p_id) values ('Public Utilities', 14);
+insert into project_fields (field_name, p_id) values ('Capital Goods', 14);
+insert into project_fields (field_name, p_id) values ('Consumer Durables', 15);
+insert into project_fields (field_name, p_id) values ('Quantum Mechanics', 15);
+insert into project_fields (field_name, p_id) values ('Consumer Non-Durables', 16);
+insert into project_fields (field_name, p_id) values ('Biotechnology', 16);
+insert into project_fields (field_name, p_id) values ('Cryptography', 17);
+insert into project_fields (field_name, p_id) values ('Augmented Reality', 17);
+insert into project_fields (field_name, p_id) values ('Virtual Reality', 18);
+insert into project_fields (field_name, p_id) values ('Pharmaceuticals', 18);
+insert into project_fields (field_name, p_id) values ('Health Care', 19);
+insert into project_fields (field_name, p_id) values ('Consumer Services', 19);
+insert into project_fields (field_name, p_id) values ('Renewable Energy', 20);
+insert into project_fields (field_name, p_id) values ('Artificial Intelligence', 20);
+insert into project_fields (field_name, p_id) values ('Public Utilities', 21);
+insert into project_fields (field_name, p_id) values ('Capital Goods', 21);
+insert into project_fields (field_name, p_id) values ('Consumer Durables', 22);
+insert into project_fields (field_name, p_id) values ('Consumer Non-Durables', 22);
+insert into project_fields (field_name, p_id) values ('Biotechnology', 23);
+insert into project_fields (field_name, p_id) values ('Cryptography', 23);
+insert into project_fields (field_name, p_id) values ('Augmented Reality', 24);
+insert into project_fields (field_name, p_id) values ('Virtual Reality', 24);
+insert into project_fields (field_name, p_id) values ('Conductors', 25);
+insert into project_fields (field_name, p_id) values ('Quantum Mechanics', 25);
+insert into project_fields (field_name, p_id) values ('Pharmaceuticals', 26);
+insert into project_fields (field_name, p_id) values ('Health Care', 26);
+insert into project_fields (field_name, p_id) values ('Consumer Services', 27);
+insert into project_fields (field_name, p_id) values ('Renewable Energy', 27);
+insert into project_fields (field_name, p_id) values ('Artificial Intelligence', 28);
+insert into project_fields (field_name, p_id) values ('Public Utilities', 28);
+insert into project_fields (field_name, p_id) values ('Capital Goods', 29);
+insert into project_fields (field_name, p_id) values ('Consumer Durables', 29);
+insert into project_fields (field_name, p_id) values ('Conductors', 30);
+insert into project_fields (field_name, p_id) values ('Quantum Mechanics', 30);
+insert into project_fields (field_name, p_id) values ('Consumer Non-Durables', 31);
+insert into project_fields (field_name, p_id) values ('Biotechnology', 31);
+insert into project_fields (field_name, p_id) values ('Cryptography', 32);
+insert into project_fields (field_name, p_id) values ('Augmented Reality', 32);
+insert into project_fields (field_name, p_id) values ('Health Care', 32);
+insert into project_fields (field_name, p_id) values ('Consumer Services', 33);
+insert into project_fields (field_name, p_id) values ('Renewable Energy', 33);
+insert into project_fields (field_name, p_id) values ('Artificial Intelligence', 33);
+insert into project_fields (field_name, p_id) values ('Public Utilities', 33);
+insert into project_fields (field_name, p_id) values ('Virtual Reality', 34);
+insert into project_fields (field_name, p_id) values ('Capital Goods', 34);
+insert into project_fields (field_name, p_id) values ('Pharmaceuticals', 35);
+insert into project_fields (field_name, p_id) values ('Consumer Durables', 35);
+insert into project_fields (field_name, p_id) values ('Cryptography', 35);
+insert into project_fields (field_name, p_id) values ('Consumer Non-Durables', 36);
+insert into project_fields (field_name, p_id) values ('Quantum Mechanics', 36);
+insert into project_fields (field_name, p_id) values ('Conductors', 37);
+insert into project_fields (field_name, p_id) values ('Health Care', 37);
+insert into project_fields (field_name, p_id) values ('Virtual Reality', 38);
+insert into project_fields (field_name, p_id) values ('Pharmaceuticals', 38);
+insert into project_fields (field_name, p_id) values ('Biotechnology', 39);
+insert into project_fields (field_name, p_id) values ('Consumer Services', 39);
+insert into project_fields (field_name, p_id) values ('Renewable Energy', 40);
+insert into project_fields (field_name, p_id) values ('Artificial Intelligence', 40);
+insert into project_fields (field_name, p_id) values ('Augmented Reality', 41);
+insert into project_fields (field_name, p_id) values ('Capital Goods', 41);
+insert into project_fields (field_name, p_id) values ('Public Utilities', 42);
+insert into project_fields (field_name, p_id) values ('Consumer Durables', 42);
+insert into project_fields (field_name, p_id) values ('Consumer Services', 43);
+insert into project_fields (field_name, p_id) values ('Renewable Energy', 43);
+insert into project_fields (field_name, p_id) values ('Artificial Intelligence', 44);
+insert into project_fields (field_name, p_id) values ('Public Utilities', 44);
+insert into project_fields (field_name, p_id) values ('Capital Goods', 44);
+insert into project_fields (field_name, p_id) values ('Cryptography', 45);
+insert into project_fields (field_name, p_id) values ('Conductors', 45);
+insert into project_fields (field_name, p_id) values ('Consumer Non-Durables', 46);
+insert into project_fields (field_name, p_id) values ('Biotechnology', 46);
+insert into project_fields (field_name, p_id) values ('Augmented Reality', 47);
+insert into project_fields (field_name, p_id) values ('Virtual Reality', 47);
+insert into project_fields (field_name, p_id) values ('Quantum Mechanics', 48);
+insert into project_fields (field_name, p_id) values ('Pharmaceuticals', 49);
+insert into project_fields (field_name, p_id) values ('Health Care', 48);
+insert into project_fields (field_name, p_id) values ('Consumer Durables', 50);
+insert into project_fields (field_name, p_id) values ('Quantum Mechanics', 50);
+
+
+
+
+
+
+
+
+
+
+
+
+"""insert into project_fields (field_name, p_id) values ('Health Care', null);
+insert into project_fields (field_name, p_id) values ('Quantum Mechanics', null);
+insert into project_fields (field_name, p_id) values ('Biotechnology', null);
+insert into project_fields (field_name, p_id) values ('Capital Goods', null);
+insert into project_fields (field_name, p_id) values ('Consumer Durables', null);
+insert into project_fields (field_name, p_id) values ('Health Care', null);
+insert into project_fields (field_name, p_id) values ('Capital Goods', null);
+insert into project_fields (field_name, p_id) values ('Cryptography', null);
+insert into project_fields (field_name, p_id) values ('Public Utilities', null);
+insert into project_fields (field_name, p_id) values ('Consumer Services', null);
+insert into project_fields (field_name, p_id) values ('Renewable Energy', null);
+insert into project_fields (field_name, p_id) values ('Artificial Intelligence', null);
+insert into project_fields (field_name, p_id) values ('Energy', null);
+insert into project_fields (field_name, p_id) values ('Consumer Services', null);
+insert into project_fields (field_name, p_id) values ('Augmented Reality', null);
+insert into project_fields (field_name, p_id) values ('Energy', null);
+insert into project_fields (field_name, p_id) values ('Consumer Non-Durables', null);
+insert into project_fields (field_name, p_id) values ('Finance', null);
+insert into project_fields (field_name, p_id) values ('Finance', null);
+insert into project_fields (field_name, p_id) values ('Finance', null);
+insert into project_fields (field_name, p_id) values ('Virtual Reality', null);
+insert into project_fields (field_name, p_id) values ('Finance', null);
+insert into project_fields (field_name, p_id) values ('Pharmaceuticals', null);
+insert into project_fields (field_name, p_id) values ('Consumer Services', null);
+insert into project_fields (field_name, p_id) values ('Consumer Services', null);"""
