@@ -1,0 +1,26 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container" id="row-container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">View Executives</h4>
+                    <p class="card-text" id="paragraph">Simple Query to database to show all executives.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/executives">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Add Executive</h4>
+                    <p class="card-text" id="paragraph">Enter a new executive into the database.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/executives/create">Add</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

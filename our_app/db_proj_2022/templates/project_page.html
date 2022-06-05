@@ -1,0 +1,79 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container" id="row-container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">View Projects</h4>
+                    <p class="card-text" id="paragraph">Simple Query to database to show all projects.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/projects">Show</a>
+                </div>
+            </div>
+        </div>
+    <div class="col-md-4">
+        <div class="card" id="card-container-layout">
+            <div class="card-body" id="card">
+                <h4 class="card-title">Create Project</h4>
+                <p class="card-text" id="paragraph">Enter a new project into the database.<br></p>
+                <a class="btn btn-primary" id="show-btn" href="/projects/create">Create</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" id="card-container-layout">
+            <div class="card-body" id="card">
+                <h4 class="card-title">Show Assignments</h4>
+                <p class="card-text" id="paragraph">Show assignments of each project.<br></p>
+                <a class="btn btn-primary" id="show-btn" href="/assignments">Show</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" id="card-container-layout">
+            <div class="card-body" id="card">
+                <h4 class="card-title">Create Assignment</h4>
+                <p class="card-text" id="paragraph">Add an assignment to a project.<br></p>
+                <a class="btn btn-primary" id="show-btn" href="/assignments/create">Create</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" id="card-container-layout">
+            <div class="card-body" id="card">
+                <h4 class="card-title">View fields of projects</h4>
+                <p class="card-text" id="paragraph">Simple Query to database to show fields of every project.</p>
+                <a class="btn btn-primary" id="show-btn" href="/project_fields">Show</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" id="card-container-layout">
+            <div class="card-body" id="card">
+                <h4 class="card-title">Add Project's Field</h4>
+                <p class="card-text" id="paragraph">Associate a field with a project.<br></p>
+                <a class="btn btn-primary" id="show-btn" href="/project_fields/create">Add</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" id="card-container-layout">
+            <div class="card-body" id="card">
+                <h4 class="card-title">View Scientific Fields</h4>
+                <p class="card-text" id="paragraph">Simple Query to database to show all scientific fields.</p>
+                <a class="btn btn-primary" id="show-btn" href="/scientific_fields">Show</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="card" id="card-container-layout">
+            <div class="card-body" id="card">
+                <h4 class="card-title">Add Project's Field</h4>
+                <p class="card-text" id="paragraph">Add a new scientific field into the database.<br></p>
+                <a class="btn btn-primary" id="show-btn" href="/scientific_fields/create">Add</a>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

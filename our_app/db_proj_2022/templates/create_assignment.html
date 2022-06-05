@@ -1,0 +1,60 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <form class="form-horizontal" name="assignment-form" method="POST">
+                <!-- hidden_tag returns the form's security metadata -->
+                {{ form.hidden_tag() }}
+                <div class="form-group col-sm-3 mb-3">
+                    {{ form.assign_title.label(class = "form-label") }}
+                    <!-- Setting required to false disables the HTML attribute and leaves input validation to the backend -->
+                    {{ form.assign_title(class = "form-control", placeholder="Enter the title of the assignment", required = False) }}
+                    {% if form.assign_title.errors %}
+                    <ul class="errors">
+                        {% for error in form.assign_title.errors %}
+                        <li class="text-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group col-sm-3 mb-3">
+                    {{ form.assign_summary.label(class = "form-label") }}
+                    {{ form.assign_summary(class = "form-control", placeholder="Enter the assignment's summary", required = False) }}
+                    {% if form.assign_summary.errors %}
+                    <ul class="errors">
+                        {% for error in form.assign_summary.errors %}
+                        <li class="text-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group col-sm-3 mb-3">
+                    {{ form.p_id.label(class = "form-label") }}
+                    {{ form.p_id(class = "form-control", placeholder="Enter the project's id", required = False) }}
+                    {% if form.p_id.errors %}
+                    <ul class="errors">
+                        {% for error in form.p_id.errors %}
+                        <li class="text-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group col-sm-3 mb-3">
+                    {{ form.due_to.label(class = "form-label") }}
+                    {{ form.due_to(class = "form-control", placeholder="Enter the assignment's due date", required = False) }}
+                    {% if form.due_to.errors %}
+                    <ul class="errors">
+                        {% for error in form.due_to.errors %}
+                        <li class="text-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {{ form.submit(class = "btn btn-primary btn-submit-custom") }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

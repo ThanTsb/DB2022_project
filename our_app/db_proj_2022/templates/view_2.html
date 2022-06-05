@@ -1,0 +1,56 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <div class="card" id="card-container">
+                <div class="card-body" id="card">
+                    {% if projects_durations|length == 0 %}
+                    <h1 style="margin-top: 5rem;">No Results found!</h1>
+                    {% else %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Project ID</th>
+                                    <th>Project Title</th>
+                                    <th>Project Summary</th>
+                                    <th>Project Start_date</th>
+                                    <th>Project End_date</th>
+                                    <th>Project Amount</th>
+                                    <th>Program ID</th>
+                                    <th>Executive ID</th>
+                                    <th>Researcher Supervisor ID</th>
+                                    <th>Organisation ID</th>
+                                    <th>Researcher Rater ID</th>
+                                    <th>Duration</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for project_duration in projects_durations %}
+                                <tr>
+                                    <td> {{ project_duration.p_id }} </td>
+                                    <td> {{ project_duration.Title }} </td>
+                                    <td> {{ project_duration.Summary }} </td>
+                                    <td> {{ project_duration.Start_date }} </td>
+                                    <td> {{ project_duration.End_date }} </td>
+                                    <td> {{ project_duration.Amount }} </td>
+                                    <td> {{ project_duration.pr_id }} </td>
+                                    <td> {{ project_duration.e_id }} </td>
+                                    <td> {{ project_duration.r_id_supervisor }} </td>
+                                    <td> {{ project_duration.o_id }} </td>
+                                    <td> {{ project_duration.r_id_rater }} </td>
+                                    <td> {{ project_duration.Duration }} </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %} 

@@ -1,0 +1,64 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container" id="row-container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Check Queries</h4>
+                    <p class="card-text" id="paragraph">Go to queries page.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/queries">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Check Projects</h4>
+                    <p class="card-text" id="paragraph">Go to projects page.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/project_page">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Check Researchers</h4>
+                    <p class="card-text" id="paragraph">Go to researchers page.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/researcher_page">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Check Organisations</h4>
+                    <p class="card-text" id="paragraph">Go to organisations page.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/organisation_page">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Check Executives</h4>
+                    <p class="card-text" id="paragraph">Go to executives page.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/executive_page">Go</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Check Programs</h4>
+                    <p class="card-text" id="paragraph">Go to programs page.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/program_page">Go</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+</div>
+{% endblock content %}

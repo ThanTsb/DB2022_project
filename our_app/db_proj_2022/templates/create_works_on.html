@@ -1,0 +1,38 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <form class="form-horizontal" name="works_on-form" method="POST">
+                <!-- hidden_tag returns the form's security metadata -->
+                {{ form.hidden_tag() }}
+                <div class="form-group col-sm-3 mb-3">
+                    {{ form.p_id.label(class = "form-label") }}
+                    <!-- Setting required to false disables the HTML attribute and leaves input validation to the backend -->
+                    {{ form.p_id(class = "form-control", placeholder="Enter id of project that researcher is to be assigned to.", required = False) }}
+                    {% if form.p_id.errors %}
+                    <ul class="errors">
+                        {% for error in form.p_id.errors %}
+                        <li class="text-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                <div class="form-group col-sm-3 mb-3">
+                    {{ form.r_id.label(class = "form-label") }}
+                    {{ form.r_id(class = "form-control", placeholder="Enter id of the researcher that is to be assigned to the project. ", required = True) }}
+                    {% if form.r_id.errors %}
+                    <ul class="errors">
+                        {% for error in form.r_id.errors %}
+                        <li class="text-danger">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+                {{ form.submit(class = "btn btn-primary btn-submit-custom") }}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

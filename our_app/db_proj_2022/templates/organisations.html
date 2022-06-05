@@ -1,0 +1,210 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <div class="card" id="card-container">
+                <div class="card-body" id="card">
+                    {% if organisations|length == 0 %}
+                    <h1 style="margin-top: 5rem;">No Organisations found!</h1>
+                    {% else %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Organisation ID</th>
+                                    <th>Organisation Name</th>
+                                    <th>Acronym</th>
+                                    <th>Postal Code</th>
+                                    <th>City</th>
+                                    <th>Street</th>
+                                    <th>Organisation Type</th>
+                                    <th>Minedu Funding</th>
+                                    <th>Private Funding</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for organisation in organisations %}
+                                <tr>
+                                    <td> {{ organisation.o_id }} </td>
+                                    <td> {{ organisation.org_name }} </td>
+                                    <td> {{ organisation.acronym }} </td>
+                                    <td> {{ organisation.postal_code }} </td>
+                                    <td> {{ organisation.city }} </td>
+                                    <td> {{ organisation.street }} </td>
+                                    <td> {{ organisation.org_type }} </td>
+                                    <td> {{ organisation.minedu_funding }} </td>
+                                    <td> {{ organisation.priv_funding }} </td>
+                                    <td>
+                                        <a type="button" onclick="setModalFields(this)" data-toggle="modal"
+                                            data-o_id="{{ organisation.o_id }}" data-org_name="{{organisation.org_name}}"
+                                            data-acronym="{{organisation.acronym}}" data-postal_code="{{organisation.postal_code}}"
+                                            data-city="{{organisation.city}}" data-street="{{organisation.street}}"
+                                            data-org_type="{{organisation.org_type}}" data-minedu_funding="{{organisation.minedu_funding}}"
+                                            data-priv_funding="{{organisation.priv_funding}}"
+                                            data-bs-toggle="modal" data-bs-target="#editModal">
+                                            <i class="fa fa-edit"></i>
+                                        </a>
+                                    </td>
+                                    <td>
+                                        <button style="all: unset; cursor: pointer;" type="button"
+                                            data-bs-toggle="modal" data-bs-target="#deleteModal"
+                                            data-o_id="{{ organisation.o_id }}" onclick="setDeleteModalFields(this)">
+                                            <i class="fa fa-trash"></i>
+                                        </button>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit modal -->
+<div id="editModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Organisation</h4>
+            </div>
+            <div class="modal-body">
+                <form id="modal-form">
+                    {{ form.hidden_tag() }}
+                    <div style="text-align: center;">
+                        <input type="text" org_name="id" id="id" readonly>
+                        <!-- Setting required to false disables the HTML attribute and leaves input validation to the backend -->
+                        {{ form.org_name(id = "org_name", required = False) }}
+                        {{ form.acronym(id = "acronym", required = False) }}
+                        {{ form.postal_code(id = "postal_code", required = False) }}
+                        {{ form.city(id = "city", required = False) }}
+                        {{ form.street(id = "street", required = False) }}
+                        {{ form.org_type(id = "org_type", required = False) }}
+                        {{ form.minedu_funding(id = "minedu_funding", required = False) }}
+                        {{ form.priv_funding(id = "priv_funding", required = False) }}
+                    </div>
+                    <div>
+                        {% if form.org_name.errors %}
+                        <ul class="errors">
+                            {% for error in form.org_name.errors %}
+                            <li class="alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.acronym.errors %}
+                        <ul class="errors">
+                            {% for error in form.acronym.errors %}
+                            <li class="alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.postal_code.errors %}
+                        <ul class="errors">
+                            {% for error in form.postal_code.errors %}
+                            <li class="alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.city.errors %}
+                        <ul class="errors">
+                            {% for error in form.city.errors %}
+                            <li class="alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.street.errors %}
+                        <ul class="errors">
+                            {% for error in form.street.errors %}
+                            <li class="alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.org_type.errors %}
+                        <ul class="errors">
+                            {% for error in form.org_type.errors %}
+                            <li class="alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.minedu_funding.errors %}
+                        <ul class="errors">
+                            {% for error in form.minedu_funding.errors %}
+                            <li class="alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.priv_funding.errors %}
+                        <ul class="errors">
+                            {% for error in form.priv_funding.errors %}
+                            <li class="alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                {{ form.submit(class = "btn btn btn-success", form = "modal-form", value = "Update") }}
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete modal -->
+<div class="modal fade" id="deleteModal">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="deleteModalLabel">Delete Organisation</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                All associated grades will be deleted too. Are you sure?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <form id="delete-modal-form">
+                    <input type="submit" class="btn btn-danger" value="Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+<script>
+    function setModalFields(row) {
+        document.getElementById("id").value = row.getAttribute("data-o_id");
+        document.getElementById("org_name").value = row.getAttribute("data-org_name");
+        document.getElementById("acronym").value = row.getAttribute("data-acronym");
+        document.getElementById("postal_code").value = row.getAttribute("data-postal_code");
+        document.getElementById("city").value = row.getAttribute("data-city");
+        document.getElementById("street").value = row.getAttribute("data-street");
+        document.getElementById("org_type").value = row.getAttribute("data-org_type");
+        document.getElementById("minedu_funding").value = row.getAttribute("data-minedu_funding");
+        document.getElementById("priv_funding").value = row.getAttribute("data-priv_funding");
+        document.getElementById("modal-form").action = "/organisations/update/" + row.getAttribute("data-o_id");
+        document.getElementById("modal-form").method = "POST";
+        //document.getElementById("submit").addEventListener("click", (e) => {e.preventDefault();});
+        // commented line above would prevent the default behavior of the submit button, that is, sending the
+        // form data with a post request to the determined address and subsequently closing the pop-up
+    }
+
+    function setDeleteModalFields(row) {
+        document.getElementById("delete-modal-form").action = "/organisations/delete/" + row.getAttribute("data-o_id");
+        document.getElementById("delete-modal-form").method = "POST";
+    }
+</script>
+{% endblock content %}

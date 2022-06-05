@@ -1,0 +1,98 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container" id="row-container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Query 1</h4>
+                    <p class="card-text" id="paragraph">Query to database to get all available programs.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/query_1_2">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Query 1.2</h4>
+                    <p class="card-text" id="paragraph">Query to database to get projects satisfying certain criteria.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/query_1">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">View 1</h4>
+                    <p class="card-text" id="paragraph">Query to database to get projects of each researcher.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/view_1">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">View 2</h4>
+                    <p class="card-text" id="paragraph">Query to database to get duration of projects.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/view_2">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Query 3</h4>
+                    <p class="card-text" id="paragraph">Query to database to get projects and researchers related to a certain scientific field.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/query_3">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Query 4</h4>
+                    <p class="card-text" id="paragraph">Query to database to show organisation who received same amount of projects in two simultaneous years(min. 10).</p>
+                    <a class="btn btn-primary" id="show-btn" href="/query_4">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Query 5</h4>
+                    <p class="card-text" id="paragraph">Query to database to show the top 3 most common pair of fields in all projects.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/query_5">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Query 6</h4>
+                    <p class="card-text" id="paragraph">Query to database to find researchers with age less than 40 that work on the most project. Also shows number of projects. <br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/query_6">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Query 7</h4>
+                    <p class="card-text" id="paragraph">Query to database to show the top 5 executives who have given the most funds to a certain company. Also shows information about related company.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/query_7">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Query 8</h4>
+                    <p class="card-text" id="paragraph">Query to database to find all researchers that work on 5 or more projects without an assignment.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/query_8">Show</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

@@ -1,0 +1,62 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container" id="row-container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">View Researchers</h4>
+                    <p class="card-text" id="paragraph">Simple Query to database to show all researchers.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/researchers">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Create Researcher</h4>
+                    <p class="card-text" id="paragraph">Enter a new researcher into the database.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/researchers/create">Create</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">View Researchers' assigned projects </h4>
+                    <p class="card-text" id="paragraph">Simple Query to database to show assigned projects of every researcher.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/works_on">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Assign Researcher to  Project</h4>
+                    <p class="card-text" id="paragraph">Assign a reseacher to a project (supervised by his organisation).<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/works_on/create">Assign</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">View Project Rating </h4>
+                    <p class="card-text" id="paragraph">Simple Query to database to show rating and related information of every project.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/rates">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Change Rating</h4>
+                    <p class="card-text" id="paragraph">Add information for a project's rating.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/rates/create">Add</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

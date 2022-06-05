@@ -1,0 +1,44 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container" id="row-container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">View Organisations</h4>
+                    <p class="card-text" id="paragraph">Simple Query to database to show all organisations.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/organisations">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Create Organisation</h4>
+                    <p class="card-text" id="paragraph">Enter a new organisation into the database.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/organisations/create">Create</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">View Organisation's phones.</h4>
+                    <p class="card-text" id="paragraph">Simple Query to database to show all organisation's phones.</p>
+                    <a class="btn btn-primary" id="show-btn" href="/phones">Show</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card" id="card-container-layout">
+                <div class="card-body" id="card">
+                    <h4 class="card-title">Create Organisation's phone</h4>
+                    <p class="card-text" id="paragraph">Enter a new phone for an organisation into the database.<br></p>
+                    <a class="btn btn-primary" id="show-btn" href="/phones/create">Create</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

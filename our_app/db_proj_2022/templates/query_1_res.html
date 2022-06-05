@@ -1,0 +1,50 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <a href="/query_1"> New Search</a>
+</div>
+<div class="container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <div class="card" id="card-container">
+                <div class="card-body" id="card">
+                {% if researchers|length == 0 %}
+                    <h1 style="margin-top: 5rem;">No researchers found!</h1>
+                {% else %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Researcher ID</th>
+                                    <th>Name</th>
+                                    <th>Surname</th>
+                                    <th>Gender</th>
+                                    <th>Date of Birth</th>
+                                    <th>Organisation ID</th>
+                                    <th>Start Date</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for researcher in researchers %}
+                                    <tr>
+                                        <td> {{ researcher.r_id }} </td>
+                                        <td> {{ researcher.res_name }} </td>
+                                        <td> {{ researcher.res_surname }} </td>
+                                        <td> {{ researcher.gender }} </td>
+                                        <td> {{ researcher.date_of_birth }} </td>
+                                        <td> {{ researcher.o_id }} </td>
+                                        <td> {{ researcher.start_date }} </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

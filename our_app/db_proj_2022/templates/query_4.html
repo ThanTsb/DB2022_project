@@ -1,0 +1,42 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <div class="card" id="card-container">
+                <div class="card-body" id="card">
+                {% if results|length == 0 %}
+                    <h1 style="margin-top: 5rem;">No Results found!</h1>
+                {% else %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>ORG_ID</th>
+                                    <th>Organisation Name</th>
+                                    <th>Project Amount</th>
+                                    <th>Year A</th>
+                                    <th>Year B</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for result in results %}
+                                    <tr>
+                                        <td> {{ result.o_id }} </td>
+                                        <td> {{ result.org_name }} </td>
+                                        <td> {{ result.sums }} </td>
+                                        <td> {{ result.year_a }} </td>
+                                        <td> {{ result.year_b }} </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

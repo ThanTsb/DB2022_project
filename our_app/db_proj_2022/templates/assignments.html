@@ -1,0 +1,162 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <div class="card" id="card-container">
+                <div class="card-body" id="card">
+                {% if assignments|length == 0 %}
+                    <h1 style="margin-top: 5rem;">No Assignments found!</h1>
+                {% else %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Assignment Title</th>
+                                    <th>Assignment Summary</th>
+                                    <th>Project ID</th>
+                                    <th>Due To</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for assignment in assignments %}
+                                    <tr>
+                                        <td> {{ assignment.assign_title }} </td>
+                                        <td> {{ assignment.assign_summary }} </td>
+                                        <td> {{ assignment.p_id }} </td>
+                                        <td> {{ assignment.due_to }} </td>
+
+                                        <td>
+                                            <a type="button" onclick="setModalFields(this)"
+                                            data-toggle="modal" data-assign_title="{{ assignment.assign_title }}"
+                                            data-assign_summary="{{assignment.assign_summary}}"  data-p_id= "{{assignment.p_id}}"
+                                            data-due_to = "{{assignment.due_to}}"  data-bs-toggle = "modal"
+                                            data-bs-target="#editModal">
+                                                <i class="fa fa-edit"></i>
+                                            </a>
+                                        </td>
+                                        <td>
+                                            <button style = "all: unset; cursor: pointer;" type = "button"
+                                            data-bs-toggle = "modal" data-bs-target = "#deleteModal"
+                                            data-assign_title = "{{ assignment.assign_title }}" onclick = "setDeleteModalFields(this)">
+                                                <i class = "fa fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Edit modal -->
+<div id="editModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">Edit Assignment</h4>
+            </div>
+            <div class="modal-body">
+                <form id="modal-form">
+                    {{ form.hidden_tag() }}
+                    <div style="text-align: center;">
+                        <input type="text" assign_title="id" id="id" readonly>
+                        <!-- Setting required to false disables the HTML attribute and leaves input validation to the backend -->
+                        {{ form.assign_summary(id = "assign_summary", required = False) }}
+                        {{ form.p_id(id = "p_id", required = False) }}
+                        {{ form.due_to(id = "due_to", required = False) }}
+                    </div>
+                    <div>
+                        {% if form.assign_title.errors %}
+                        <ul class = "errors">
+                            {% for error in form.assign_title.errors %}
+                            <li class = "alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.assign_summary.errors %}
+                        <ul class = "errors">
+                            {% for error in form.assign_summary.errors %}
+                            <li class = "alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.p_id.errors %}
+                        <ul class = "errors">
+                            {% for error in form.p_id.errors %}
+                            <li class = "alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                        {% if form.due_to.errors %}
+                        <ul class = "errors">
+                            {% for error in form.due_to.errors %}
+                            <li class = "alert text-danger">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% endif %}
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                {{ form.submit(class = "btn btn btn-success", form = "modal-form", value = "Update") }}
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<!-- Delete modal -->
+<div class = "modal fade" id="deleteModal">
+    <div class = "modal-dialog">
+        <div class = "modal-content">
+            <div class = "modal-header">
+                <h5 class = "modal-title" id = "deleteModalLabel">Delete assignment</h5>
+                <button type = "button" class = "btn-close" data-bs-dismiss = "modal" aria-label = "Close"></button>
+            </div>
+            <div class = "modal-body">
+                This will delete this assignment. Are you sure?
+            </div>
+            <div class = "modal-footer">
+                <button type = "button" class = "btn btn-secondary" data-bs-dismiss = "modal">Close</button>
+                <form id = "delete-modal-form">
+                    <input type = "submit" class = "btn btn-danger" value = "Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+<script>
+    function setModalFields(row) {
+        document.getElementById("id").value = row.getAttribute("data-assign_title");
+        document.getElementById("assign_summary").value = row.getAttribute("data-assign_summary");
+        document.getElementById("p_id").value = row.getAttribute("data-p_id");
+        document.getElementById("due_to").value = row.getAttribute("data-due_to");
+        document.getElementById("modal-form").action = "/assignments/update/" + row.getAttribute("data-assign_title");
+        document.getElementById("modal-form").method = "POST";
+        // document.getElementById("submit").addEventListener("click", (e) => {e.preventDefault();});
+        // commented line above would prevent the default behavior of the submit button, that is, sending the
+        // form data with a post request to the determined address and subsequently closing the pop-up
+    }
+
+    function setDeleteModalFields(row) {
+        document.getElementById("delete-modal-form").action = "/assignments/delete/" + row.getAttribute("data-assign_title");
+        document.getElementById("delete-modal-form").method = "POST";
+    }
+</script>
+{% endblock content %}

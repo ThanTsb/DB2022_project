@@ -1,0 +1,75 @@
+{% extends "global_layout.html" %}
+{% block content %}
+<div class="container">
+    {% include "flash_messages.html" %}
+    <div class="row" id="row">
+        <div class="col-md-12">
+            <div class="card" id="card-container">
+                <div class="card-body" id="card">
+                {% if scientific_fields|length == 0 %}
+                    <h1 style="margin-top: 5rem;">No Assignments found!</h1>
+                {% else %}
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Scientific Field</th>
+                                    <th></th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for scientific_field in scientific_fields %}
+                                    <tr>
+                                        <td> {{ scientific_field.field_name }} </td>
+                                        <td>
+                                            <button style = "all: unset; cursor: pointer;" type = "button"
+                                            data-bs-toggle = "modal" data-bs-target = "#deleteModal"
+                                            data-field_name = "{{ scientific_field.field_name }}" onclick = "setDeleteModalFields(this)">
+                                                <i class = "fa fa-trash"></i>
+                                            </button>
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Delete modal -->
+<div class = "modal fade" id="deleteModal">
+    <div class = "modal-dialog">
+        <div class = "modal-content">
+            <div class = "modal-header">
+                <h5 class = "modal-title" id = "deleteModalLabel">Delete scientific_field</h5>
+                <button type = "button" class = "btn-close" data-bs-dismiss = "modal" aria-label = "Close"></button>
+            </div>
+            <div class = "modal-body">
+                This will delete this scientific field. Are you sure?
+            </div>
+            <div class = "modal-footer">
+                <button type = "button" class = "btn btn-secondary" data-bs-dismiss = "modal">Close</button>
+                <form id = "delete-modal-form">
+                    <input type = "submit" class = "btn btn-danger" value = "Delete">
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+
+</script>
+
+<script>
+    function setDeleteModalFields(row) {
+        document.getElementById("delete-modal-form").action = "/scientific_fields/delete/" + row.getAttribute("data-field_name");
+        document.getElementById("delete-modal-form").method = "POST";
+    }
+</script>
+{% endblock content %}
